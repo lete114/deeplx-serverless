@@ -28,8 +28,7 @@
   "types": "./packages/core/dist/index.d.mts",
   "scripts": {
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "prepare": "simple-git-hooks"
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "body-data": "^2.0.4",
@@ -38,14 +37,6 @@
   "devDependencies": {
     "@antfu/eslint-config": "^3.6.0",
     "eslint": "^9.10.0",
-    "lint-staged": "^16.1.2",
-    "simple-git-hooks": "^2.13.0",
     "typescript": "^5.6.2"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm i --frozen-lockfile --ignore-scripts --offline && npx lint-staged"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
   }
 }
