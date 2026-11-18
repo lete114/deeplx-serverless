@@ -78,10 +78,20 @@ async function handle(options) {
       const to = body.to.toUpperCase();
       const options2 = { text, from, to };
       const response = await translate(options2);
-      const translateData = await response.json();
-      if (translateData.error) {
+      const raw = await response.text();
+      let translateData;
+      try {
+        translateData = JSON.parse(raw);
+      } catch {
+      }
+      if (!response.ok) {
         const code2 = response.status;
-        return Response.json({ code: code2, ...translateData }, { status: code2 });
+        const msg = translateData?.message ?? translateData?.title ?? "Translation failed";
+        return Response.json({ code: code2, message: msg }, { status: code2 });
+      }
+      if (!translateData) {
+        const code2 = 502;
+        return Response.json({ code: code2, message: "Invalid response from DeepL" }, { status: code2 });
       }
       const responseData = parse2DeepLX({ ...options2, ...translateData });
       return Response.json(responseData, { status: response.status });

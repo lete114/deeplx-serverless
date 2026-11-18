@@ -77,15 +77,9 @@ curl 'https://your-api-address/translate' \
   "code": 200,
   "id": 145289000,
   "method": "Free",
-  "from": "EN",
-  "to": "ZH",
   "source_lang": "EN",
   "target_lang": "ZH",
   "data": "你好，世界",
-  "alternatives": [
-    "世界，你好",
-    "世界你好",
-    "您好，世界"
-  ]
+  "alternatives": null
 }
 ```

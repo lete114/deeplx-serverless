@@ -6,7 +6,7 @@ catalog:
   '@antfu/eslint-config': ^4.16.2
   '@types/node': ^24.0.10
   body-data: ^2.0.4
-  deeplx-lib: ^0.0.5
+  deeplx-lib: ^0.1.0
   eslint: ^9.30.1
   tsx: ^4.20.3
   typescript: ^5.8.3

@@ -1,4 +1,4 @@
-import type { IOptions as deepLXOptions, IDeepLData, IDeepLDataError, TSourceLanguage, TTargetLanguage } from 'deeplx-lib'
+import type { IOptions as deepLXOptions, IDeepLOneShotData, TSourceLanguage, TTargetLanguage } from 'deeplx-lib'
 import type { IBody, IOptions, IParams } from './types'
 import { bodyData, toWebRequest } from 'body-data'
 import { parse2DeepLX, translate } from 'deeplx-lib'
@@ -73,11 +73,23 @@ export async function handle(options: IOptions): Promise<Response> {
       const to = body.to.toUpperCase() as TTargetLanguage
       const options: deepLXOptions = { text, from, to }
       const response = await translate(options)
-      const translateData = await response.json() as IDeepLData & IDeepLDataError
+      const raw = await response.text()
 
-      if (translateData.error) {
+      let translateData: (IDeepLOneShotData & { message?: string, title?: string }) | undefined
+      try {
+        translateData = JSON.parse(raw)
+      }
+      catch {}
+
+      if (!response.ok) {
         const code = response.status
-        return Response.json({ code, ...translateData }, { status: code })
+        const msg = translateData?.message ?? translateData?.title ?? 'Translation failed'
+        return Response.json({ code, message: msg }, { status: code })
+      }
+
+      if (!translateData) {
+        const code = 502
+        return Response.json({ code, message: 'Invalid response from DeepL' }, { status: code })
       }
 
       const responseData = parse2DeepLX({ ...options, ...translateData })
