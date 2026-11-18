@@ -56,8 +56,8 @@ importers:
   platform/cloudflare:
     dependencies:
       deeplx-serverless:
-        specifier: github:lete114/deeplx-serverless#v0.0.6
-        version: https://codeload.github.com/lete114/deeplx-serverless/tar.gz/f3436ff1f49bb0a82246e5be1eebfa2d1fdda0ac
+        specifier: github:lete114/deeplx-serverless#v0.0.7
+        version: https://codeload.github.com/lete114/deeplx-serverless/tar.gz/137651f2f9685abd116113a95f400fae3170197c
     devDependencies:
       '@cloudflare/vitest-pool-workers':
         specifier: ^0.8.19
@@ -72,8 +72,8 @@ importers:
   platform/netlify:
     dependencies:
       deeplx-serverless:
-        specifier: github:lete114/deeplx-serverless#v0.0.6
-        version: https://codeload.github.com/lete114/deeplx-serverless/tar.gz/f3436ff1f49bb0a82246e5be1eebfa2d1fdda0ac
+        specifier: github:lete114/deeplx-serverless#v0.0.7
+        version: https://codeload.github.com/lete114/deeplx-serverless/tar.gz/137651f2f9685abd116113a95f400fae3170197c
     devDependencies:
       '@types/node':
         specifier: ^24.0.10
@@ -85,8 +85,8 @@ importers:
   platform/vercel:
     dependencies:
       deeplx-serverless:
-        specifier: github:lete114/deeplx-serverless#v0.0.6
-        version: https://codeload.github.com/lete114/deeplx-serverless/tar.gz/f3436ff1f49bb0a82246e5be1eebfa2d1fdda0ac
+        specifier: github:lete114/deeplx-serverless#v0.0.7
+        version: https://codeload.github.com/lete114/deeplx-serverless/tar.gz/137651f2f9685abd116113a95f400fae3170197c
     devDependencies:
       '@types/node':
         specifier: ^24.0.10
@@ -2750,8 +2750,8 @@ packages:
   deeplx-lib@0.1.0:
     resolution: {integrity: sha512-DoJf+bC6d/sy08SI7lsd4mWC22Eee4gyKDznjsYCKUVz39yceSTQhZTnDCz3FIbXAt0JVwQFl9fWg8x2IpXMmQ==}
 
-  deeplx-serverless@https://codeload.github.com/lete114/deeplx-serverless/tar.gz/f3436ff1f49bb0a82246e5be1eebfa2d1fdda0ac:
-    resolution: {tarball: https://codeload.github.com/lete114/deeplx-serverless/tar.gz/f3436ff1f49bb0a82246e5be1eebfa2d1fdda0ac}
+  deeplx-serverless@https://codeload.github.com/lete114/deeplx-serverless/tar.gz/137651f2f9685abd116113a95f400fae3170197c:
+    resolution: {tarball: https://codeload.github.com/lete114/deeplx-serverless/tar.gz/137651f2f9685abd116113a95f400fae3170197c}
     version: 1.0.0
 
   deepmerge@4.3.1:
@@ -9786,7 +9786,7 @@ snapshots:
 
   deeplx-lib@0.1.0: {}
 
-  deeplx-serverless@https://codeload.github.com/lete114/deeplx-serverless/tar.gz/f3436ff1f49bb0a82246e5be1eebfa2d1fdda0ac:
+  deeplx-serverless@https://codeload.github.com/lete114/deeplx-serverless/tar.gz/137651f2f9685abd116113a95f400fae3170197c:
     dependencies:
       body-data: 2.0.4
       deeplx-lib: 0.1.0
